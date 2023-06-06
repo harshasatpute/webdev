@@ -1,7 +1,7 @@
 FROM centos:latest
-MAINTAINER choudharysirvi1212@gmail.com
+MAINTAINER harshasatpute8@gmail.com
 RUN yum install httpd git -y
-RUN git clone https://github.com/praveensirvi1212/webdev /var/www/html
+RUN git clone https://github.com/harshasatpute/webdev.git /var/www/html
 WORKDIR /var/www/html
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 EXPOSE 80
