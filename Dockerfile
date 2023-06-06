@@ -1,8 +1,11 @@
 FROM centos:latest
 MAINTAINER harshasatpute8@gmail.com
 
+# Disable the 'appstream' repository
+RUN sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/CentOS-AppStream.repo
+
 # Update the base image and refresh repository information
-RUN yum update -y && yum clean all
+RUN yum update -y 
 
 # Install necessary packages
 RUN yum install -y httpd git
