@@ -1,7 +1,20 @@
 FROM centos:latest
 MAINTAINER harshasatpute8@gmail.com
-RUN yum install httpd && yum install git -y
+
+# Update the base image and refresh repository information
+RUN yum update -y && yum clean all
+
+# Install necessary packages
+RUN yum install -y httpd git
+
+# Clone the repository
 RUN git clone https://github.com/harshasatpute/webdev.git /var/www/html
+
+# Set the working directory
 WORKDIR /var/www/html
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+
+# Start Apache server
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+
+# Expose port 80 for incoming connections
 EXPOSE 80
