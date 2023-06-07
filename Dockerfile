@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:7
 MAINTAINER harshasatpute8@gmail.com
 
 # Update the base image and refresh repository information
