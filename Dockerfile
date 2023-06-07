@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos
 MAINTAINER harshasatpute8@gmail.com
 
 # Update the base image and refresh repository information
@@ -8,7 +8,7 @@ RUN /bin/sh -c yum update -y
 RUN /bin/sh -c yum install -y httpd git
 
 # Clone the repository
-RUN /bin/sh -c git clone https://github.com/harshasatpute/webdev.git /var/www/html
+RUN git clone https://github.com/harshasatpute/webdev.git /var/www/html
 
 # Set the working directory
 WORKDIR /var/www/html
