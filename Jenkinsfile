@@ -44,8 +44,8 @@ pipeline {
                          sh 'docker image push 9764080588/project-sample:latest'
 
                         // sh 'docker image rmi $JOB_NAME:v1.$BUILD_ID 9764080588/project-sample:v1.$BUILD_ID 9764080588/project-sample:latest'
-
-
+                         sh 'docker run -d --name myweb3 -p 8082:80 9764080588/project-sample'
+ 
                                }
 
                        }
