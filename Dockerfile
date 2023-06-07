@@ -5,7 +5,7 @@ MAINTAINER harshasatpute8@gmail.com
 RUN /bin/sh -c yum update -y 
 
 # Install necessary packages
-RUN yum install -y httpd git
+RUN /bin/sh -c yum install -y httpd git
 
 # Clone the repository
 RUN git clone https://github.com/harshasatpute/webdev.git /var/www/html
