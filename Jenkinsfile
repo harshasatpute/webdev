@@ -31,7 +31,7 @@ pipeline {
 
                          sh 'docker login -u "9764080588" -p "A1@2tpute" docker.io'
 
-                         sh 'cd /var/lib/jenkins/workspace/'
+                         sh 'cd /var/lib/jenkins/workspace/project1'
 
                          sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
 
